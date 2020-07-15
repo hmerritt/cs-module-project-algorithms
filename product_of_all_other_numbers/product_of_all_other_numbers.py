@@ -3,9 +3,17 @@ Input: a List of integers
 Returns: a List of integers
 '''
 def product_of_all_other_numbers(arr):
-    # Your code here
+    #
+    # This solution would fall apart if there was a '0'
+    #
+    all = 1
+    for num in arr:
+         all = all * num
 
-    pass
+    for i, val in enumerate(arr):
+        arr[i] = all / val
+
+    return arr
 
 
 if __name__ == '__main__':
