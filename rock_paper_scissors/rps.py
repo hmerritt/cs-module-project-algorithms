@@ -1,11 +1,15 @@
 #!/usr/bin/python
 
 import sys
+import itertools
 
 def rock_paper_scissors(n):
   # Your code here
+  if n == 0:
+      return [[]]
 
-  pass
+  res = list(itertools.permutations(["rock", "paper", "scissors"], n))
+  return [list(ele) for ele in res] 
 
 
 if __name__ == "__main__":

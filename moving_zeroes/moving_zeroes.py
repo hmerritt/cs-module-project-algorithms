@@ -3,9 +3,18 @@ Input: a List of integers
 Returns: a List of integers
 '''
 def moving_zeroes(arr):
-    # Your code here
+    found = []
 
-    pass
+    for i, val in enumerate(arr):
+        if val == 0:
+            found.append(i)
+
+    for i, val in enumerate(found):
+        arr.pop(val - i)
+        arr.append(0)
+
+    return arr
+
 
 
 if __name__ == '__main__':
